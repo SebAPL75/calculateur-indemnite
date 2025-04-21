@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculateur Indemnité Licenciement</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-section">
+        <h2>Paramètres</h2>
+        <form id="indemnity-form">
+          <div class="form-group">
+            <label for="licenciement">Indemnité de licenciement (€):</label>
+            <input
+              type="number"
+              id="licenciement"
+              name="licenciement"
+              value="50000"
+              required
+              min="0"
+              step="100"
+            />
+          </div>
+          <div class="form-group">
+            <label for="transactionnelle"
+              >Indemnité transactionnelle (€):</label
+            >
+            <input
+              type="number"
+              id="transactionnelle"
+              name="transactionnelle"
+              value="10000"
+              required
+              min="0"
+              step="100"
+            />
+          </div>
+          <div class="form-group">
+            <label for="salaire-annuel">Rémunération brute N-1 (€):</label>
+            <input
+              type="number"
+              id="salaire-annuel"
+              name="salaire-annuel"
+              value="45000"
+              required
+              min="0"
+              step="100"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="chart-section">
+        <h2>Régime Fiscal et Social</h2>
+        <div class="chart-container">
+          <canvas id="indemnityChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOUVELLE SECTION POUR LES DÉTAILS -->
+    <div class="details-container">
+      <div id="calculation-details" class="details-section">
+        <h2>Détail des Calculs</h2>
+        <!-- Le contenu sera généré par JavaScript -->
+        <p>Entrez les montants ci-dessus pour voir le détail.</p>
+      </div>
+    </div>
+
+    <!-- Librairie Chart.js et plugin Annotation -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
